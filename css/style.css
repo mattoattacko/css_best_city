@@ -44,11 +44,18 @@ img {
 
 .name {
 	font-size: 1.25em;
+	margin: 0; /* removes the default T/B margins and helps stop collapse */
+}
+
+.main-nav {
+	margin-top: 5px;
 }
 
 .name a,
 .main-nav a {
 	text-align: center;
+	display: block;
+	padding: 10px 15px; /*this and the display prop will allow us to click on buttons easier */
 }
 
 .main-nav a {
@@ -63,9 +70,26 @@ img {
 
 /* ---- Layout Containers ---- */
 
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.banner,
+.main-footer {
+	text-align: center; /* center alings the content in our banner and footer element */
+}
+
 .banner {
 	color: #fff;
 	background: #3acec2;
+	padding: 3.2em 0;
+	margin-bottom: 60px; /* gives us cleaner seperation bt the banner div and the content columns below it */
+}
+
+.col {
+	padding-right: 1em; /* these help keep our text off the edge of the columns */
+	padding-left: 1em;
 }
 
 .main-footer {
@@ -80,6 +104,9 @@ img {
 	width: 190px;
 }
 
+.headline {
+	margin-bottom: 0; /* this removes some of the space bt the headline and the tagline below it */
+}
 /* ================================= 
   Media Queries
 ==================================== */
