@@ -113,14 +113,34 @@ img {
 
 @media (min-width: 769px) {
 
+.container {
+	width: 90%; /* giving our container width keeps it from streatching to wide on larger screens */
+	margin: 0 auto; /* setting our L&R margins to "auto" centers the container in the browser */
+}
 
+.name {
+	float: left; /* floats it left of the header */
+}
 
-	/* ---- Float clearfix ---- */
+.main-nav {
+	float: right;
+}
 
-	.clearfix::after {
-		content: " ";
-		display: table;
-		clear: both;
-	}
+.main-nav li {
+	display: inline-block;
+	margin-left: 15px; /* will display our <li> side-by-side and create some seperation between each navigation item */
+}
+
+.tagline { /* targets the span element in <div class=banner> */
+	font-size: 1.4em; /* increases the tagline font size and make it stand out a bit more on larger screens */
+}
+
+/* ---- Float clearfix ---- */
+
+.clearfix::after {
+	content: " ";
+	display: table;		
+	clear: both;
+}
 
 }
