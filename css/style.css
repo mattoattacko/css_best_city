@@ -118,8 +118,14 @@ img {
 	margin: 0 auto; /* setting our L&R margins to "auto" centers the container in the browser */
 }
 
-.name {
+.name,
+.col {
 	float: left; /* floats it left of the header */
+}
+
+.primary,
+.secondary {
+	width: 50%;
 }
 
 .main-nav {
@@ -142,5 +148,25 @@ img {
 	display: table;		
 	clear: both;
 }
+
+}
+
+@media (min-width: 1025px) {
+
+	/* in this breakpoint, all 3 columns would be side-by-side on the same line. We want the primary col to be slightly wider than the 2nd/3rd columns */
+
+	.container { 
+		width: 80%;
+		max-width: 1150px;
+	}
+
+	.primary {
+		width: 40%;
+	}
+
+	.secondary,
+	.tertiary {
+		width: 30%;
+	}
 
 }
