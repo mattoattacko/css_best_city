@@ -24,8 +24,13 @@ a {
 }
 
 h2,
-h3 {
+h3,
+h4 {
 	margin-top: 0;
+}
+
+h4 {
+	margin-bottom: .4em;
 }
 
 a {
@@ -36,6 +41,24 @@ img {
 	max-width: 100%;
 }
 
+figure {
+	margin: 0;
+	line-height: 0;
+	position: relative;
+}
+
+figcaption {
+	font-size: .9em;
+	line-height: 1.5;
+	color: #fff;
+	padding: 1em;	
+	background: rgba(19,43,102, .85);
+	
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
 /* ================================= 
   Base Layout Styles
 ==================================== */
@@ -44,29 +67,29 @@ img {
 
 .name {
 	font-size: 1.25em;
-	margin: 0; /* removes the default T/B margins and helps stop collapse */
+	margin: 0;
 }
 
 .main-nav {
 	margin-top: 5px;
 }
 
-.name a,
-.main-nav a {
-	text-align: center;
-	display: block;
-	padding: 10px 15px; /*this and the display prop will allow us to click on buttons easier */
-}
+	.name a,
+	.main-nav a {
+		display: block;
+		text-align: center;
+		padding: 10px 15px;
+	}
+	
+	.main-nav a {
+		font-size: .95em;
+		color: #3acec2;
+		text-transform: uppercase;
+	}
 
-.main-nav a {
-	font-size: .95em;
-	color: #3acec2;
-	text-transform: uppercase;
-}
-
-.main-nav a:hover {
-	color: #093a58;
-}
+	.main-nav a:hover {
+		color: #093a58;
+	}
 
 /* ---- Layout Containers ---- */
 
@@ -77,18 +100,18 @@ img {
 
 .banner,
 .main-footer {
-	text-align: center; /* center alings the content in our banner and footer element */
+	text-align: center;
 }
 
 .banner {
 	color: #fff;
 	background: #3acec2;
 	padding: 3.2em 0;
-	margin-bottom: 60px; /* gives us cleaner seperation bt the banner div and the content columns below it */
+	margin-bottom: 60px;
 }
 
 .col {
-	padding-right: 1em; /* these help keep our text off the edge of the columns */
+	padding-right: 1em;
 	padding-left: 1em;
 }
 
@@ -105,57 +128,77 @@ img {
 }
 
 .headline {
-	margin-bottom: 0; /* this removes some of the space bt the headline and the tagline below it */
+	margin-bottom: 0;
 }
+
+.icon-location {
+	width: 35px;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	z-index: 2;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
 
 @media (min-width: 769px) {
 
-.container {
-	width: 90%; /* giving our container width keeps it from streatching to wide on larger screens */
-	margin: 0 auto; /* setting our L&R margins to "auto" centers the container in the browser */
-}
+	body {
+		padding-top: 68px;
+	}
 
-.name,
-.col {
-	float: left; /* floats it left of the header */
-}
+	.main-header {
+		position: fixed;
+		background: #fff;
+		box-shadow: 0 1px 4px rgba(0,0,0,.4);
+		width: 100%;
+		top: 0;
+		z-index: 1000;
+	}
 
-.primary,
-.secondary {
-	width: 50%;
-}
+	.container {
+		width: 90%;
+		margin: 0 auto;
+	}
 
-.main-nav {
-	float: right;
-}
+	.name,
+	.col {
+		float: left;
+	}
 
-.main-nav li {
-	display: inline-block;
-	margin-left: 15px; /* will display our <li> side-by-side and create some seperation between each navigation item */
-}
+	.primary,
+	.secondary {
+		width: 50%;
+	}
 
-.tagline { /* targets the span element in <div class=banner> */
-	font-size: 1.4em; /* increases the tagline font size and make it stand out a bit more on larger screens */
-}
+	.main-nav {
+		float: right;
+	}
 
-/* ---- Float clearfix ---- */
+	.main-nav li {
+		display: inline-block;
+		margin-left: 15px;
+	}
 
-.clearfix::after {
-	content: " ";
-	display: table;		
-	clear: both;
-}
+	.tagline {
+		font-size: 1.4em;
+	}
+
+	/* ---- Float clearfix ---- */
+
+	.clearfix::after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
 
 }
 
 @media (min-width: 1025px) {
-
-	/* in this breakpoint, all 3 columns would be side-by-side on the same line. We want the primary col to be slightly wider than the 2nd/3rd columns */
-
-	.container { 
+	
+	.container {
 		width: 80%;
 		max-width: 1150px;
 	}
